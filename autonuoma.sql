@@ -25,6 +25,8 @@ SET time_zone = "+00:00";
 --
 -- Sukurta duomenų struktūra lentelei `pavyzdys_aiksteles`
 --
+create database autonuoma_min;
+use autonuoma_min;
 
 CREATE TABLE `pavyzdys_aiksteles` (
   `id` int(11) NOT NULL,
