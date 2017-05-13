@@ -43,7 +43,7 @@ class users {
 		$query = "  UPDATE `{$this->vartotoju_lentele}`
 					SET    `username`='{$data['username']}',
 						   `email`='{$data['email']}',
-						   `name`='{$data['name']}',
+						   `name`='{$data['name']}'
 					WHERE `id`='{$data['id']}'";
 		mysql::query($query);
 	}

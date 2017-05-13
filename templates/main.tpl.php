@@ -19,6 +19,7 @@
 				<div id="topMenu">
 					<ul class="float-left">
 						<li><a href="index.php?module=user&action=list" title="Vartotojai"<?php if($module == 'user') { echo 'class="active"'; } ?>>Vartotojai</a></li>
+						<li><a href="index.php?module=student&action=list" title="Studentai"<?php if($module == 'student') { echo 'class="active"'; } ?>>Studentai</a></li>
 						<li><a href="index.php?module=contract&action=list" title="Sutartys"<?php if($module == 'contract') { echo 'class="active"'; } ?>>Sutartys</a></li>
 						<li><a href="index.php?module=service&action=list" title="Paslaugos"<?php if($module == 'service') { echo 'class="active"'; } ?>>Paslaugos</a></li>
 						<li><a href="index.php?module=customer&action=list" title="Klientai"<?php if($module == 'customer') { echo 'class="active"'; } ?>>Klientai</a></li>
