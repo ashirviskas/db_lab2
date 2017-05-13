@@ -8,7 +8,8 @@
 	// nustatome pasirinktą modulį
 	$module = '';
 	if(isset($_GET['module'])) {
-		$module = mysql::escape($_GET['module']);
+            //die("Įvesta module parametro reikšmė: {$_GET['module']}"); 
+            $module = mysql::escape($_GET['module']);
 	}
 	
 	// jeigu pasirinktas elementas (sutartis, automobilis ir kt.), nustatome elemento id

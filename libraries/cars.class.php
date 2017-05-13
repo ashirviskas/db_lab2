@@ -54,7 +54,7 @@ class cars {
 					FROM `{$this->automobiliai_lentele}`
 					WHERE `{$this->automobiliai_lentele}`.`id`='{$id}'";
 		$data = mysql::select($query);
-		
+
 		return $data[0];
 	}
 	

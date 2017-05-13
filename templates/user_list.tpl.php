@@ -1,6 +1,6 @@
 <ul id="pagePath">
 	<li><a href="index.php">Pradžia</a></li>
-	<li>Automobiliai</li>
+	<li>Vartotojai</li>
 </ul>
 <div id="actions">
 	<a href='index.php?module=<?php echo $module; ?>&action=create'>Naujas vartotojas</a>
@@ -9,16 +9,16 @@
 
 <?php if(isset($_GET['remove_error'])) { ?>
 	<div class="errorBox">
-		Automobilis nebuvo pašalinta, nes yra įtrauktas į sutartį (-is).
+		Vartotojas nebuvo pašalinta, nes yra įtrauktas į sutartį (-is).
 	</div>
 <?php } ?>
 
 <table class="listTable">
 	<tr>
 		<th>ID</th>
-		<th>Valstybinis nr.</th>
-		<th>Modelis</th>
-		<th>Būsena</th>
+		<th>Vardas</th>
+		<th>Email</th>
+		<th>Username</th>
 		<th></th>
 	</tr>
 	<?php
@@ -27,9 +27,9 @@
 			echo
 				"<tr>"
 					. "<td>{$val['id']}</td>"
-					. "<td>{$val['valstybinis_nr']}</td>"
-					. "<td>{$val['marke']} {$val['modelis']}</td>"
-					. "<td>{$val['busena']}</td>"
+					. "<td>{$val['name']}</td>"
+					. "<td>{$val['email']}</td>"
+					. "<td>{$val['username']}</td>"
 					. "<td>"
 						. "<a href='#' onclick='showConfirmDialog(\"{$module}\", \"{$val['id']}\"); return false;' title=''>šalinti</a>&nbsp;"
 						. "<a href='index.php?module={$module}&action=edit&id={$val['id']}' title=''>redaguoti</a>"

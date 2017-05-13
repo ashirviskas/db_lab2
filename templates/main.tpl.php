@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="robots" content="noindex">
-		<title>Automobilių nuomos IS</title>
+		<title>Akademijos IS</title>
 		<link rel="stylesheet" type="text/css" href="scripts/datetimepicker/jquery.datetimepicker.css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="style/main.css" media="screen" />
 		<script type="text/javascript" src="scripts/jquery-1.12.0.min.js"></script>
@@ -13,11 +13,12 @@
 	<body>
 		<div id="body">
 			<div id="header">
-				<h3 id="slogan"><a href="index.php">Automobilių nuomos IS</a></h3>
+				<h3 id="slogan"><a href="index.php">Akademijos IS</a></h3>
 			</div>
 			<div id="content">
 				<div id="topMenu">
 					<ul class="float-left">
+						<li><a href="index.php?module=user&action=list" title="Vartotojai"<?php if($module == 'user') { echo 'class="active"'; } ?>>Vartotojai</a></li>
 						<li><a href="index.php?module=contract&action=list" title="Sutartys"<?php if($module == 'contract') { echo 'class="active"'; } ?>>Sutartys</a></li>
 						<li><a href="index.php?module=service&action=list" title="Paslaugos"<?php if($module == 'service') { echo 'class="active"'; } ?>>Paslaugos</a></li>
 						<li><a href="index.php?module=customer&action=list" title="Klientai"<?php if($module == 'customer') { echo 'class="active"'; } ?>>Klientai</a></li>

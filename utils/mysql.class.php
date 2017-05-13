@@ -45,7 +45,6 @@ class mysql {
         
         // Query the database
         $result = $connection->query($query);
-		
         return $result;
     }
 	
