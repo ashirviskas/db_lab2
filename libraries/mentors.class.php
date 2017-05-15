@@ -50,7 +50,7 @@ class mentors {
 	 * Mentoriaus įrašymas
 	 * @param type $data
 	 */
-	public function insertStudent($data) {
+	public function insertMentor($data) {
 		$query = "  INSERT INTO `{$this->mentoriu_lentele}` 
 								(
 									`fk_Teamid`,
@@ -75,7 +75,7 @@ class mentors {
                                     `{$this->vartotoju_lentele}`.`email`,
                                     `{$this->vartotoju_lentele}`.`username`,
                                     `{$this->vartotoju_lentele}`.`name`,
-                                    `{$this->mentoriu_lentele}`.`name` AS `team`
+                                    `{$this->komandu_lentele}`.`name` AS `team`
 					FROM `{$this->mentoriu_lentele}` 
                                         LEFT JOIN `{$this->vartotoju_lentele}` ON
                                         `{$this->mentoriu_lentele}`.`fk_Userid`=`{$this->vartotoju_lentele}`.`id`    

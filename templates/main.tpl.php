@@ -19,14 +19,10 @@
 				<div id="topMenu">
 					<ul class="float-left">
 						<li><a href="index.php?module=user&action=list" title="Vartotojai"<?php if($module == 'user') { echo 'class="active"'; } ?>>Vartotojai</a></li>
-						<li><a href="index.php?module=student&action=list" title="Studentai"<?php if($module == 'student') { echo 'class="active"'; } ?>>Studentai</a></li>
-						<li><a href="index.php?module=contract&action=list" title="Sutartys"<?php if($module == 'contract') { echo 'class="active"'; } ?>>Sutartys</a></li>
-						<li><a href="index.php?module=service&action=list" title="Paslaugos"<?php if($module == 'service') { echo 'class="active"'; } ?>>Paslaugos</a></li>
-						<li><a href="index.php?module=customer&action=list" title="Klientai"<?php if($module == 'customer') { echo 'class="active"'; } ?>>Klientai</a></li>
-						<li><a href="index.php?module=employee&action=list" title="Darbuotojai"<?php if($module == 'employee') { echo 'class="active"'; } ?>>Darbuotojai</a></li>
-						<li><a href="index.php?module=car&action=list" title="Automobiliai"<?php if($module == 'car') { echo 'class="active"'; } ?>>Automobiliai</a></li>
-						<li><a href="index.php?module=brand&action=list" title="Markės"<?php if($module == 'brand') { echo 'class="active"'; } ?>>Markės</a></li>
-						<li><a href="index.php?module=model&action=list" title="Modeliai"<?php if($module == 'model') { echo 'class="active"'; } ?>>Modeliai</a></li>
+                                                <li><a href="index.php?module=student&action=list" title="Studentai"<?php if($module == 'student') { echo 'class="active"'; } ?>>Studentai</a></li>
+                                                <li><a href="index.php?module=mentor&action=list" title="Mentoriai"<?php if($module == 'mentor') { echo 'class="active"'; } ?>>Mentoriai</a></li>
+                                                <li><a href="index.php?module=team&action=list" title="Komandos"<?php if($module == 'team') { echo 'class="active"'; } ?>>Komandos</a></li>
+                                                <li><a href="index.php?module=academy&action=list" title="Akademijos"<?php if($module == 'akademija') { echo 'class="active"'; } ?>>Akademijos</a></li>
 					</ul>
 					<ul class="float-right">
 						<li><a href="index.php?module=report&action=list" title="Ataskaitos"<?php if($module == 'report') { echo 'class="active"'; } ?>>Ataskaitos</a></li>
