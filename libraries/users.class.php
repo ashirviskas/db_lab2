@@ -103,17 +103,9 @@ class users {
 	 * @return type
 	 */
 	public function getCountOfInstancesUsed($id) {
-		$query = "  SELECT COUNT(`x`.`fk_Userid`) AS `kiekis`
-					FROM (SELECT `fk_Userid`
-                                        FROM `{$this->studentu_lentele}`
-                                            UNION ALL
-                                        FROM `{$this->mentoriu_lentele}`
-                                            UNION ALL
-                                        FROM `{$this->lektoriu_lentele}`
-                                            UNION ALL
-                                         ) x
-                                        WHERE `x`.`fk_Userid='{$data['id']}'
-                                            GROUP BY `x`.`fk_Userid`";
+		$query = "  SELECT ((select count(*) FROM  `{$this->studentu_lentele}` where `fk_Userid`='{$id}')+
+                                    (select count(*) FROM `{$this->lektoriu_lentele}` where `fk_Userid`='{$id}')+
+                                     (select count(*) FROM `{$this->mentoriu_lentele}` where `fk_Userid`='{$id}')) as `kiekis`";
 		$data = mysql::select($query);		
 		return $data[0]['kiekis'];
 	}

@@ -11,12 +11,16 @@ class students {
 	private $studentu_lentele = '';
 	private $komandu_lentele = '';
 	private $mentoriu_lentele = '';
+	private $pazymiu_lentele = '';
+	private $lankomumo_lentele = '';
 	
 	public function __construct() {
 		$this->vartotoju_lentele = config::DB_PREFIX . 'users';
 		$this->studentu_lentele = config::DB_PREFIX . 'student';
 		$this->komandu_lentele = config::DB_PREFIX . 'team';
 		$this->mentoriu_lentele = config::DB_PREFIX . 'mentor';
+		$this->pazymiu_lentele = config::DB_PREFIX . 'grade';
+		$this->lankomumo_lentele = config::DB_PREFIX . 'attendance';
 	}
 	
 	/**
@@ -88,6 +92,28 @@ class students {
                 //die("{$query}");
 		return $data;
 	}
+        /**
+	 * 
+	 * @return type
+	 */
+	public function getUserList() {
+		$query = "  SELECT *
+					FROM `{$this->vartotoju_lentele}`";
+		$data = mysql::select($query);
+		
+		return $data;
+	}
+        /**
+	 * 
+	 * @return type
+	 */
+	public function getTeamList() {
+		$query = "  SELECT *
+					FROM `{$this->komandu_lentele}`";
+		$data = mysql::select($query);
+		
+		return $data;
+	}
 
 	/**
 	 * Studentų kiekio radimas
@@ -106,10 +132,23 @@ class students {
 	 * @param type $id
 	 */
 	public function deleteStudent($id) {
+            //die("{$id}");
 		$query = "  DELETE FROM `{$this->studentu_lentele}`
 					WHERE `id`='{$id}'";
+                //die("{$query}");
 		mysql::query($query);
 	}
-	
+        
+	/**
+	 * Studentų pažymių, lankomumo ir etc. kiekio radimas
+	 * @return type
+	 */
+	public function getCountOfInstancesUsed($id) {
+                $query = "  SELECT ((select count(*) FROM  `{$this->pazymiu_lentele}` where `fk_Studentid`='{$id}')+
+                                    (select count(*) FROM `{$this->lankomumo_lentele}` where `fk_Studentid`='{$id}')) as `kiekis`";
+                //die($query);
+		$data = mysql::select($query);		
+		return $data[0]['kiekis'];
+	}
 	
 }

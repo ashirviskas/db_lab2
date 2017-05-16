@@ -9,7 +9,7 @@
 
 <?php if(isset($_GET['remove_error'])) { ?>
 	<div class="errorBox">
-		Vartotojas nebuvo pašalinta, nes yra įtrauktas į sutartį (-is).
+		Studentas nebuvo pašalintas, nes yra įtrauktas į pažymius.
 	</div>
 <?php } ?>
 
