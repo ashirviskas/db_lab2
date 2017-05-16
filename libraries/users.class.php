@@ -11,12 +11,14 @@ class users {
 	private $studentu_lentele = '';
 	private $komandu_lentele = '';
 	private $mentoriu_lentele = '';
+	private $lektoriu_lentele = '';
 	
 	public function __construct() {
 		$this->vartotoju_lentele = config::DB_PREFIX . 'users';
 		$this->studentu_lentele = config::DB_PREFIX . 'student';
 		$this->komandu_lentele = config::DB_PREFIX . 'team';
 		$this->mentoriu_lentele = config::DB_PREFIX . 'mentor';
+		$this->lektoriu_lentele = config::DB_PREFIX . 'lector';
 	}
 	
 	/**
@@ -94,6 +96,25 @@ class users {
 					FROM `{$this->vartotoju_lentele}`";
 		$data = mysql::select($query);
 		
+		return $data[0]['kiekis'];
+	}
+	/**
+	 * Vartotojų kiekio radimas
+	 * @return type
+	 */
+	public function getCountOfInstancesUsed($id) {
+		$query = "  SELECT COUNT(`x`.`fk_Userid`) AS `kiekis`
+					FROM (SELECT `fk_Userid`
+                                        FROM `{$this->studentu_lentele}`
+                                            UNION ALL
+                                        FROM `{$this->mentoriu_lentele}`
+                                            UNION ALL
+                                        FROM `{$this->lektoriu_lentele}`
+                                            UNION ALL
+                                         ) x
+                                        WHERE `x`.`fk_Userid='{$data['id']}'
+                                            GROUP BY `x`.`fk_Userid`";
+		$data = mysql::select($query);		
 		return $data[0]['kiekis'];
 	}
 	
