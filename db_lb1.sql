@@ -1234,14 +1234,14 @@ ALTER TABLE `lector`
 -- Indexes for table `mentor`
 --
 ALTER TABLE `mentor`
-  ADD UNIQUE KEY `fk_Teamid` (`fk_Teamid`),
-  ADD UNIQUE KEY `fk_Userid` (`fk_Userid`);
+  ADD KEY `fk_Teamid` (`fk_Teamid`),
+  ADD KEY `fk_Userid` (`fk_Userid`);
 
 --
 -- Indexes for table `student`
 --
 ALTER TABLE `student`
-  ADD UNIQUE KEY `fk_Userid` (`fk_Userid`),
+  ADD KEY `fk_Userid` (`fk_Userid`),
   ADD KEY `Is_in_a` (`fk_Teamid`);
 
 --

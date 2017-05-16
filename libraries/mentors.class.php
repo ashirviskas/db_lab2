@@ -110,6 +110,33 @@ class mentors {
 					WHERE `id`='{$id}'";
 		mysql::query($query);
 	}
+        /**
+	 * Paslaugos kainų įrašymas
+	 * @param type $data
+	 */
+	public function insertMentors($data) {
+		if(isset($data['fk_Userid']) && sizeof($data['fk_Userid']) > 0) {
+			foreach($data['fk_Userid'] as $key=>$val) {
+                            //echo " Sup $key";
+                            //die("{$key}");
+				if($data['neaktyvus'] == array() || $data['neaktyvus'][$key] == 0) {
+					$query = "  INSERT INTO `{$this->mentoriu_lentele}`
+											(
+												`fk_Userid`,
+												`fk_Teamid`
+											)
+											VALUES
+											(
+												'{$data['fk_Userid'][$key]}',
+												'{$data['fk_Teamid'][$key]}'
+											)";
+                                        //die("kfkdf {$query}");
+					mysql::query($query);
+				}
+			}
+                        //die();
+		}
+	}
 	
 	
 }
